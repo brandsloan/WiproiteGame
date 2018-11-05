@@ -1,2 +1,3 @@
 # WiproiteGame
-https://discord.gg/vAseVT
+#permanent discord link
+https://discord.gg/T7xuCc3
