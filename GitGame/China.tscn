@@ -1,0 +1,358 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://PlayerMovement.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Artifact.gd" type="Script" id=3]
+[ext_resource path="res://pixil-frame-0.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 30, 30 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 30, 30 )
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 32.6956
+
+[node name="Level" type="Node"]
+
+[node name="Player" type="KinematicBody2D" parent="." index="0"]
+
+position = Vector2( 280, 100 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player" index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="1"]
+
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="Player" index="2"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[node name="WallSet" type="Node" parent="." index="1"]
+
+editor/display_folded = true
+
+[node name="FloorTile" type="StaticBody2D" parent="WallSet" index="0"]
+
+editor/display_folded = true
+position = Vector2( 280, 240 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="WallSet/FloorTile" index="0"]
+
+modulate = Color( 0.0625, 0.00170898, 0.00170898, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallSet/FloorTile" index="1"]
+
+shape = SubResource( 2 )
+
+[node name="FloorTile2" type="StaticBody2D" parent="WallSet" index="1"]
+
+editor/display_folded = true
+position = Vector2( 400, 240 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="WallSet/FloorTile2" index="0"]
+
+modulate = Color( 0.0625, 0.00170898, 0.00170898, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallSet/FloorTile2" index="1"]
+
+shape = SubResource( 2 )
+
+[node name="FloorTile4" type="StaticBody2D" parent="WallSet" index="2"]
+
+editor/display_folded = true
+position = Vector2( 460, 300 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="WallSet/FloorTile4" index="0"]
+
+modulate = Color( 0.0625, 0.00170898, 0.00170898, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallSet/FloorTile4" index="1"]
+
+shape = SubResource( 2 )
+
+[node name="FloorTile5" type="StaticBody2D" parent="WallSet" index="3"]
+
+editor/display_folded = true
+position = Vector2( 520, 300 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="WallSet/FloorTile5" index="0"]
+
+modulate = Color( 0.0625, 0.00170898, 0.00170898, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallSet/FloorTile5" index="1"]
+
+shape = SubResource( 2 )
+
+[node name="FloorTile6" type="StaticBody2D" parent="WallSet" index="4"]
+
+editor/display_folded = true
+position = Vector2( 580, 240 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="WallSet/FloorTile6" index="0"]
+
+modulate = Color( 0.0625, 0.00170898, 0.00170898, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallSet/FloorTile6" index="1"]
+
+shape = SubResource( 2 )
+
+[node name="FloorTile7" type="StaticBody2D" parent="WallSet" index="5"]
+
+editor/display_folded = true
+position = Vector2( 580, 110 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="WallSet/FloorTile7" index="0"]
+
+modulate = Color( 0.0625, 0.00170898, 0.00170898, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallSet/FloorTile7" index="1"]
+
+shape = SubResource( 2 )
+
+[node name="FloorTile8" type="StaticBody2D" parent="WallSet" index="6"]
+
+editor/display_folded = true
+position = Vector2( 650, 240 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="WallSet/FloorTile8" index="0"]
+
+modulate = Color( 0.0625, 0.00170898, 0.00170898, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallSet/FloorTile8" index="1"]
+
+shape = SubResource( 2 )
+
+[node name="FloorTile9" type="StaticBody2D" parent="WallSet" index="7"]
+
+editor/display_folded = true
+position = Vector2( 720, 240 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="WallSet/FloorTile9" index="0"]
+
+modulate = Color( 0.0625, 0.00170898, 0.00170898, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallSet/FloorTile9" index="1"]
+
+shape = SubResource( 2 )
+
+[node name="FloorTile10" type="StaticBody2D" parent="WallSet" index="8"]
+
+editor/display_folded = true
+position = Vector2( 850, 240 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="WallSet/FloorTile10" index="0"]
+
+modulate = Color( 0.0625, 0.00170898, 0.00170898, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallSet/FloorTile10" index="1"]
+
+shape = SubResource( 2 )
+
+[node name="FloorTile3" type="StaticBody2D" parent="WallSet" index="9"]
+
+editor/display_folded = true
+position = Vector2( 340, 240 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="WallSet/FloorTile3" index="0"]
+
+modulate = Color( 0.0625, 0.00170898, 0.00170898, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallSet/FloorTile3" index="1"]
+
+shape = SubResource( 2 )
+
+[node name="Eye of Horus" type="Node2D" parent="." index="2"]
+
+position = Vector2( 850, 180 )
+script = ExtResource( 3 )
+
+[node name="Eye" type="Sprite" parent="Eye of Horus" index="0"]
+
+position = Vector2( 10, 15 )
+scale = Vector2( 0.8, 0.7 )
+texture = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="Eye of Horus" index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eye of Horus/Area2D" index="0"]
+
+position = Vector2( 0, 0.499999 )
+scale = Vector2( 1, 0.884615 )
+shape = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="Eye of Horus" index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+

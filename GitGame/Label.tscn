@@ -1,0 +1,179 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Map.jpg" type="Texture" id=1]
+[ext_resource path="res://flagClicker.gd" type="Script" id=2]
+[ext_resource path="res://flag.png" type="Texture" id=3]
+[ext_resource path="res://Egyptian_Pyramids_Icon.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 102.427, 49.5263 )
+
+[node name="GameBoard" type="Label"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1.0
+margin_top = 1.0
+margin_right = 1027.0
+margin_bottom = 602.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Hello World
+"
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="World Map" type="Sprite" parent="." index="0"]
+
+position = Vector2( 508.231, 296.837 )
+rotation = 0.000469893
+scale = Vector2( 0.999775, 0.789529 )
+texture = ExtResource( 1 )
+
+[node name="America Node" type="Area2D" parent="World Map" index="0"]
+
+editor/display_folded = true
+position = Vector2( 254.816, -272.425 )
+scale = Vector2( 0.366069, 0.321659 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+lvlSelect = "Nordic.tscn"
+
+[node name="Sprite" type="Sprite" parent="World Map/America Node" index="0"]
+
+position = Vector2( 5.32693, 6.4109 )
+scale = Vector2( 0.225949, 0.295122 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Map/America Node" index="1"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+
+[node name="SouthAmerica Node" type="Area2D" parent="World Map" index="1"]
+
+editor/display_folded = true
+position = Vector2( 29.7705, 139.542 )
+scale = Vector2( 0.366069, 0.321659 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+lvlSelect = "Aztec.tscn"
+
+[node name="Sprite" type="Sprite" parent="World Map/SouthAmerica Node" index="0"]
+
+position = Vector2( -0.68334, 0.590957 )
+scale = Vector2( 0.225949, 0.295122 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Map/SouthAmerica Node" index="1"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+
+[node name="Africa Node" type="Area2D" parent="World Map" index="2"]
+
+editor/display_folded = true
+position = Vector2( -56.6956, -122.269 )
+scale = Vector2( 0.851257, 0.909399 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+lvlSelect = "res://Egypt.tscn"
+
+[node name="Sprite" type="Sprite" parent="World Map/Africa Node" index="0"]
+
+position = Vector2( 7.33037, -3.65504 )
+scale = Vector2( 0.225949, 0.295122 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Map/Africa Node" index="1"]
+
+position = Vector2( 2.10673, 4.28868 )
+scale = Vector2( 0.388467, 0.849988 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+
+[node name="Asia Node" type="Area2D" parent="World Map" index="3"]
+
+editor/display_folded = true
+position = Vector2( 238.205, 36.4858 )
+scale = Vector2( 0.366069, 0.321659 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+lvlSelect = "China.tscn"
+
+[node name="Sprite" type="Sprite" parent="World Map/Asia Node" index="0"]
+
+position = Vector2( -3.95619, 4.37331 )
+scale = Vector2( 0.225949, 0.295122 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Map/Asia Node" index="1"]
+
+position = Vector2( 29.1711, 9.42346 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+
+[node name="EuropeNode" type="Area2D" parent="World Map" index="4"]
+
+editor/display_folded = true
+position = Vector2( -324.013, 112.047 )
+scale = Vector2( 0.366069, 0.321659 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+lvlSelect = "GrecoRoman.tscn"
+
+[node name="Sprite" type="Sprite" parent="World Map/EuropeNode" index="0"]
+
+position = Vector2( 5.32696, 8.35074 )
+scale = Vector2( 0.225949, 0.295122 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Map/EuropeNode" index="1"]
+
+position = Vector2( 8.01395, 9.69962 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+
+

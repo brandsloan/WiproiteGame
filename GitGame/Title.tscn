@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://pixil-frame-0 (3).png" type="Texture" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://LevelClicker.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12.8341, 9.96835 )
+
+[node name="StartScreen" type="Node"]
+
+[node name="FinalBossLoomin" type="Sprite" parent="." index="0"]
+
+position = Vector2( 513.413, 304.788 )
+scale = Vector2( 9.8678, 5.88082 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Region", "Visibility" ]
+
+[node name="Background" type="Sprite" parent="FinalBossLoomin" index="0"]
+
+modulate = Color( 0, 0, 0, 1 )
+show_behind_parent = true
+position = Vector2( 0.28357, 5.8304 )
+scale = Vector2( 3.5979, 4.72193 )
+texture = ExtResource( 2 )
+
+[node name="StartButton" type="Label" parent="FinalBossLoomin" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -52.0
+margin_top = 35.0
+margin_right = 52.0
+margin_bottom = 49.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "press to begin"
+align = 1
+valign = 1
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Area2D" type="Area2D" parent="FinalBossLoomin/StartButton" index="0"]
+
+position = Vector2( 52.7372, -35.1707 )
+scale = Vector2( 1.63994, 1.55717 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinalBossLoomin/StartButton/Area2D" index="0"]
+
+position = Vector2( -0.208169, -0.505821 )
+scale = Vector2( 2.53015, 3.05845 )
+shape = SubResource( 1 )
+
+
